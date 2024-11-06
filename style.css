@@ -3,6 +3,12 @@
     src: url(Assets/PlayfairDisplay-VariableFont_wght.ttf);
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Playfair Display";
     padding: 0;
@@ -11,7 +17,7 @@ body {
 
 section,
 footer {
-    padding: 5rem 8rem;
+    padding: 5rem 6rem;
 }
 
 #about-me-section {
@@ -20,63 +26,91 @@ footer {
 }
 
 .about-me-container {
-    display: flex;
+    width: 95%;
+    min-width: 250px;
+    margin: 0 auto;
 }
 
-.about-me-container>div:first-child {
-    flex: 7;
-    position: relative;
+.text-with-image {
+    overflow: hidden;
+    /* Para limpiar los elementos flotantes y evitar desbordes */
 }
 
-.text-over-img {
-    position: absolute;
-    margin: 0;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    color: white;
-    font-size: 5rem;
+/* Estilo para la imagen flotante */
+.image {
+    float: left;
+    /* La imagen flota a la izquierda */
+    margin-right: 2rem;
+    /* Espacio entre la imagen y el texto */
+    margin-bottom: 10px;
+    /* Espacio debajo de la imagen */
+    width: 40%;
+    /* Asegura que la imagen tenga un tamaño consistente */
+    min-width: 280px;
+    height: auto;
+    /* Mantiene la proporción de la imagen */
+}
+
+/* Contenedor del texto (fondo blanco) */
+.text-content {
+    background-color: #ffffff;
+    /* Fondo blanco para el texto */
+    padding: 3rem;
+    margin-top: 4rem;
+    /* Desplaza el texto un poco hacia abajo */
+}
+
+/* Estilo para el título */
+.title h1 {
+    font-size: 2.5rem;
     font-weight: bold;
-    text-align: center;
-    border-radius: 5px;
+    color: #333;
+    margin-top: 0;
+    /* Alinea el título con la parte superior */
+    margin-bottom: 1.5rem;
+    /* Separación entre el título y el texto */
 }
 
-.about-me-container>div:last-child {
-    flex: 8;
-    padding: 5rem 0;
-    display: flex;
+/* Estilo para el párrafo */
+.paragraph p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+    text-align: justify;
+    margin-top: 0;
 }
 
-.about-me {
-    background-color: #fff;
-    padding: 0 2.2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+/* Contenedor para los iconos */
+.icon-container {
+    display: block;
+    /* Asegura que los iconos estén en una nueva línea */
+    margin-top: 2rem;
+    text-align: end;
 }
 
-.about-me h1 {
-    font-size: 3.5rem;
+/* Estilo para los iconos (FontAwesome) */
+.icon {
+    height: 2rem;
+    /* Tamaño consistente de los iconos */
+    margin-right: 1.5rem;
+    /* Espacio entre los iconos */
+    margin-top: 0;
+    /* Alineación al borde superior */
+    margin-bottom: 10px;
+    /* Espacio debajo de los iconos */
+    display: inline-block;
+    /* Los iconos están en el mismo flujo de texto */
 }
 
-.about-me p {
-    font-size: 1.8rem;
-    line-height: 1.5;
-}
-
-.about-me div {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.about-me img {
-    height: 3rem;
+/* Asegura que los elementos después de la imagen no desborden */
+.text-with-image::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 h3 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     margin: 0;
 }
 
@@ -84,10 +118,10 @@ h3 {
     margin-top: 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 5rem 4rem;
+    gap: 3rem 2rem;
 }
 
-#work-container > div {
+#work-container>div {
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -95,14 +129,15 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 5rem;
+    /* padding: 0 2rem; */
     color: #fff;
-    font-size: 6rem;
+    font-size: 3rem;
     text-align: center;
     height: 500px;
 }
+
 .project-description {
-    padding: 1rem 2.5rem;
+    padding: 1rem 1.5rem;
 }
 
 .project-main {
@@ -111,24 +146,24 @@ h3 {
     align-items: center;
 }
 
-.project-main > div {
+.project-main>div {
     display: flex;
-    gap: 2.5rem;
+    gap: 2rem;
     justify-content: center;
     align-items: center;
 }
 
 .project-main img {
-    height: 2.5rem;
+    height: 2rem;
 }
 
 h4 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin: 0;
 }
 
 .project-description p {
-    font-size: 2.2rem;
+    font-size: 2rem;
     margin-bottom: 8rem;
 }
 
@@ -139,13 +174,14 @@ footer {
 
 #contact-container {
     display: flex;
-    gap: 5rem;
+    flex-direction: row;
+    gap: 3rem;
     color: #fff;
 }
 
 .contact {
     flex: 3;
-    padding: 2rem 0;
+    padding: 0;
 }
 
 .contact-img {
@@ -153,16 +189,18 @@ footer {
 }
 
 .contact-img img {
-    height: 100%;
+    height: auto;
     width: 100%;
 }
 
 footer h3 {
-    font-size: 3.5rem;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
 }
 
-footer p{
-    font-size: 2.8rem;
+footer p {
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 .contact-methods {
@@ -172,9 +210,61 @@ footer p{
 }
 
 .contact-methods img {
-    height: 2.8rem;
+    height: 2rem;
 }
 
 .contact-methods:last-child {
     gap: 4rem;
+}
+
+@media (max-width: 1024px) {
+
+    section,
+    footer {
+        padding: 5rem 3rem;
+    }
+
+    #work-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #contact-container {
+        flex-direction: column;
+    }
+
+    .contact-methods:last-child {
+        justify-content: center;
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 650px) {
+    #work-container {
+        grid-template-columns: 1fr;
+    }
+
+    #contact-container {
+        flex-direction: column;
+    }
+    section,
+    footer {
+        padding: 3rem 1em;
+    }
+
+    footer h3 {
+        font-size: 2rem;
+    }
+    
+    footer p {
+        font-size: 1rem;
+    }
+    
+    .contact-methods:last-child {
+        justify-content: center;
+        gap: 4rem;
+    }
+
+    .image {
+        width: 100%;
+    }
 }
